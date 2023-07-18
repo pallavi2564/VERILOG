@@ -1,0 +1,32 @@
+module d_ff_tb();
+reg d,clk,areset;
+wire q;
+
+
+d_ff dut( .q(q), .d(d),  .clk(clk), .areset(areset)); 
+
+
+initial
+  $monitor("simtime = %t, clk = %b, d = %b, q = %b", $time, clock, d, q);
+
+
+initial 
+begin
+  clk=0;
+     forever #2 clk = ~clk;  
+end 
+
+initial
+ begin 
+ d = 0;
+ #5
+ d = 1;
+ #5
+ d = 0;
+ #5
+ d = 1;
+ #5
+ 
+$finish();  
+end
+endmodule
