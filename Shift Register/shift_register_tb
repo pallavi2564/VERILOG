@@ -1,0 +1,49 @@
+module shift_register_tb();        
+   
+   reg data;                  
+   reg clk;                   
+   reg en;                    
+                   
+   reg reset;                  
+   wire [3:0] q;        
+   
+   
+  shift_register  dut ( .d (data), .clk (clk), .en (en), .reset (reset), .q(q));
+
+  
+   always #10 clk = ~clk;
+
+   initial
+   begin
+      clk <= 0;
+      en <= 0;
+    
+      reset <= 0;
+      data <= 4'b1001;
+   end
+
+   
+   initial
+   begin     
+	  reset <= 0;     			
+      #20 
+	  reset <= 1;
+      en <= 1;
+          
+	  
+      repeat (10) @ (posedge clk) 
+      data <= ~data;
+   
+     
+      #10   					
+      
+      repeat (10) @ (posedge clk);
+      
+      
+      $finish;
+   end
+
+   
+   initial
+      $monitor ("reset=%0b data=%b, en=%0b, q=%b", reset, data, en,q);
+endmodule
