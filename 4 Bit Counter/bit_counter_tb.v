@@ -1,8 +1,4 @@
 module bit_counter_tb();
-
-
-
-
 reg clk, reset;
 
 wire [3:0] q;
