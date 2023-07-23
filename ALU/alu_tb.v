@@ -6,14 +6,12 @@ module tb_alu;
   reg[3:0] sel;
 
   wire[7:0] out;
-  wire [7:0]O;
+  
  integer i;
  alu dut(
    .A(A),.B(B),                  
    .sel(sel),
-   .out(out),
-   .O(O)
-     );
+   .out(out));
     initial begin
    
       A = 8'h0A;
