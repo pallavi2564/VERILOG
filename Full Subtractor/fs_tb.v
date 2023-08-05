@@ -2,7 +2,7 @@ module fs_tb;
   reg a, b, Bin;
   wire D, Bout;
   
-  fs uut(a, b, Bin, D, Bout);
+  fs uut(.a(a), .b(b), .Bin(Bin), .D(D), .Bout(Bout));
   
 initial begin
   $monitor("At time %0t: a=%b b=%b, Bin=%b, D=%b, Bout=%b",$time, a,b,Bin,D,Bout);
