@@ -7,9 +7,7 @@ module comparator_tb;
     wire e;
     wire g;
 
-  comparator uut (
-       a,b,l,e,g
-    );
+  comparator uut (.a(a),.b(b),.l(l),.e(e),.g(g) );
 
     initial begin
         
