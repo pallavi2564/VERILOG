@@ -3,7 +3,7 @@ module dmux_tb;
   reg i;
   wire y0,y1,y2,y3;
   
-  dmux uut(sel, i, y0, y1, y2, y3);
+  dmux uut(.sel(sel), .i(i), .y0(y0), .y1(y1), .y2(y2), .y3(y3));
   
   initial begin
     $monitor("sel = %b, i = %b -> y0 = %0b, y1 = %0b ,y2 = %0b, y3 = %0b", sel,i, y0,y1,y2,y3);
