@@ -4,7 +4,7 @@ module cla_tb;
   wire [3:0] S;
   wire Cout;
 
-  cla uut(A, B, Cin, S, Cout);
+  cla uut(.A(A), .B(B), .Cin(Cin), .S(S), .Cout(Cout));
   
 
   initial begin
