@@ -4,7 +4,7 @@ reg cin;
 wire [3:0]sum;
 wire c4;
 
-rca uut(a,b,cin,sum,c4);
+  rca uut(.a(a),.b(b),.cin(cin),.sum(sum),.c4(c4));
 
 initial begin
 cin = 0;
