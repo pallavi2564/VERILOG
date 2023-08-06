@@ -3,7 +3,7 @@ module xor_tb;
   reg a,b;
   wire y;
   xor dut(.a(a),.b(b),.y(y));
-  $monitor("time=%b, a=%b, in_b=%b, y=%2b ",$time,a,b,y);
+  $monitor("time=%b, a=%b, b=%b, y=%b ",$time,a,b,y);
 
   initial begin
     a=1,b=0;
